@@ -3,7 +3,7 @@ WORKDIR /app
 
 # caches restore result by copying csproj file separately
 COPY *.csproj .
-RUN dotnet restore
+RUN dotnet restore MyRazorApp.csproj
 
 COPY . .
 RUN dotnet publish --output /app/ --configuration Release --no-restore
